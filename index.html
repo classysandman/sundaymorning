@@ -14,10 +14,6 @@
         color: white;
       }
 
-      .container {
-        text-align: center;
-      }
-
       .result-box {
         display: inline-block;
         padding: 16px 32px;
@@ -26,45 +22,21 @@
         border: 3px solid white;
         border-radius: 16px;
       }
-
-      button {
-        display: block;
-        margin: 20px auto 0;
-        padding: 12px 32px;
-        font-size: 16px;
-        background: transparent;
-        color: white;
-        border: 2px solid white;
-        border-radius: 8px;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background: white;
-        color: #0d1117;
-      }
     </style>
   </head>
   <body>
-    <div class="container">
-      <div class="result-box" id="result"></div>
-      <button onclick="check()">Check again</button>
-    </div>
+    <div class="result-box" id="result"></div>
     <script>
-      function check() {
-        const day = new Date().getDay();
-        const result = document.getElementById("result");
+      const day = new Date().getDay();
+      const result = document.getElementById("result");
 
-        if (day === 0) {
-          result.textContent = "Today is Sunday!";
-        } else if (day === 6) {
-          result.textContent = "Tomorrow is Sunday!";
-        } else {
-          result.textContent = "Today is not Sunday.";
-        }
+      if (day === 0) {
+        result.textContent = "Today is Sunday!";
+      } else if (day === 6) {
+        result.textContent = "Tomorrow is Sunday!";
+      } else {
+        result.textContent = "Today is not Sunday.";
       }
-
-      check();
     </script>
   </body>
 </html>
