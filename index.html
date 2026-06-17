@@ -5,6 +5,7 @@
     <style>
       body {
         display: flex;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
@@ -22,20 +23,32 @@
         border: 3px solid white;
         border-radius: 16px;
       }
+
+      .days-left {
+        margin-top: 16px;
+        font-size: 14px;
+        color: #aaaaaa;
+      }
     </style>
   </head>
   <body>
     <div class="result-box" id="result"></div>
+    <p class="days-left" id="days-left"></p>
     <script>
       const day = new Date().getDay();
       const result = document.getElementById("result");
+      const daysLeft = document.getElementById("days-left");
+      const daysUntilSunday = day === 0 ? 0 : 7 - day;
 
       if (day === 0) {
         result.textContent = "Today is Sunday!";
+        daysLeft.textContent = "Enjoy your Sunday!";
       } else if (day === 6) {
         result.textContent = "Tomorrow is Sunday!";
+        daysLeft.textContent = "Just 1 day to go.";
       } else {
         result.textContent = "Today is not Sunday.";
+        daysLeft.textContent = `${daysUntilSunday} days until Sunday.`;
       }
     </script>
   </body>
