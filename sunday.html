@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Sunday Checker</title>
+  </head>
+  <body>
+    <h1 id="result"></h1>
+    <script>
+      const day = new Date().getDay();
+      const result = document.getElementById("result");
+
+      if (day === 0) {
+        result.textContent = "Today is Sunday!";
+      } else if (day === 6) {
+        result.textContent = "Tomorrow is Sunday!";
+      } else {
+        result.textContent = "Today is not Sunday.";
+      }
+    </script>
+  </body>
+</html>
